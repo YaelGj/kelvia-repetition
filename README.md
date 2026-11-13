@@ -1,5 +1,8 @@
 # Kelvia — billetterie en ligne de festivals
 
+![ci](https://github.com/YaelGj/kelvia-repetition/actions/workflows/ci.yml/badge.svg)
+
+
 > Cas fictif, exercice pédagogique.
 
 Kelvia vend en ligne les billets de festivals. Le jour de l'ouverture des ventes, le site est tombé et ce sont les festivaliers qui ont prévenu l'équipe.
