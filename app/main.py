@@ -6,7 +6,7 @@ from fastapi import FastAPI, HTTPException
 from fastapi.responses import HTMLResponse
 from pydantic import BaseModel
 
-FESTIVAL = "Festival des Lucioles"
+FESTIVAL = "Festival de Mon Binôme"
 QUANTITE_MAX = 4
 # Catégories de billets, en mémoire : prix en euros et stock.
 CATEGORIES = {
