@@ -1,7 +1,6 @@
 # Kelvia — billetterie en ligne de festivals
 
-![ci](https://github.com/YaelGj/kelvia-repetition/actions/workflows/ci.yml/badge.svg)
-
+![ci](https://github.com/YaelGj/kelvia-api/actions/workflows/ci.yml/badge.svg)
 
 > Cas fictif, exercice pédagogique.
 
@@ -402,7 +401,7 @@ Les deux lignes marquées « TP 4 » dans `app/main.py`. Grafana : port 3000, ta
 from prometheus_fastapi_instrumentator import Instrumentator
 Instrumentator().instrument(app, latency_lowr_buckets=(0.005, 0.01, 0.025, 0.05, 0.1, 0.25, 0.5, 1)).expose(app)
 ```
-`curl -s localhost:8000/metrics | head` affiche des mesures. Sous `./charge.sh`, environ 5 requêtes par seconde ; sous `./charge.sh rush`, le trafic et la latence montent pendant 60 s.
+`curl -s localhost:8000/metrics | head` affiche des mesures. Sous `./charge.sh`, environ 3 requêtes par seconde ; sous `./charge.sh rush`, le trafic et la latence montent pendant 60 s.
 </details>
 
 ### 2. Lire la latence au 95e centile au pic de ./charge.sh rush.

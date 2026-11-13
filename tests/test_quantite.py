@@ -12,10 +12,10 @@ from app.main import app, verifier_quantite
 
 def test_quantite_trop_grande_refusee_unitaire():
     with pytest.raises(ValueError):
-        verifier_quantite(___)
+        verifier_quantite(5)
 
 
 def test_quantite_trop_grande_refusee_integration():
     client = TestClient(app)
-    reponse = client.post("/billets", json={"categorie": "Pass 1 jour", "quantite": ___})
-    assert reponse.status_code == ___
+    reponse = client.post("/billets", json={"categorie": "Pass 1 jour", "quantite": 5})
+    assert reponse.status_code == 422

@@ -1,14 +1,13 @@
 services:
-  # TP 4, partie 1 : décommentez le service api (sélectionnez les lignes, puis Ctrl+/).
-  # api:
-  #   build: .
-  #   ports: ["8000:8000"]
-  #   environment: {SERVIE_PAR: docker}
-  #   healthcheck:
-  #     test: >-
-  #       python -c "import urllib.request as u;
-  #       u.urlopen('http://localhost:8000/health')"
-  #     interval: 10s
+  api:
+    build: .
+    ports: ["8000:8000"]
+    environment: {SERVIE_PAR: docker}
+    healthcheck:
+      test: >-
+        python -c "import urllib.request as u;
+        u.urlopen('http://localhost:8000/health')"
+      interval: 10s
   prometheus:
     image: prom/prometheus:v3.15.1
     ports: ["9090:9090"]
