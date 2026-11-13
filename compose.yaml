@@ -1,0 +1,23 @@
+services:
+  # TP 4, partie 1 : décommentez le service api (sélectionnez les lignes, puis Ctrl+/).
+  # api:
+  #   build: .
+  #   ports: ["8000:8000"]
+  #   environment: {SERVIE_PAR: docker}
+  #   healthcheck:
+  #     test: >-
+  #       python -c "import urllib.request as u;
+  #       u.urlopen('http://localhost:8000/health')"
+  #     interval: 10s
+  prometheus:
+    image: prom/prometheus:v3.15.1
+    ports: ["9090:9090"]
+    volumes: ["./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml:ro"]
+  grafana:
+    image: grafana/grafana:13.3.0
+    ports: ["3000:3000"]
+    environment:
+      GF_AUTH_ANONYMOUS_ENABLED: "true"
+      GF_AUTH_ANONYMOUS_ORG_ROLE: Viewer
+      GF_DASHBOARDS_DEFAULT_HOME_DASHBOARD_PATH: /etc/grafana/provisioning/dashboards/kelvia.json
+    volumes: ["./monitoring:/etc/grafana/provisioning:ro"]

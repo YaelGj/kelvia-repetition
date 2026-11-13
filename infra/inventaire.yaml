@@ -1,0 +1,12 @@
+# Inventaire Ansible : les « machines » sont des conteneurs, joints par Docker (sans SSH).
+all:
+  vars: {ansible_connection: community.docker.docker,
+         ansible_python_interpreter: /usr/local/bin/python3}
+recette:
+  hosts: {vm-web-1: }
+  vars: {environnement: RECETTE,
+         maintenance: false}
+production:
+  hosts: {vm-web-2: }
+  vars: {environnement: PRODUCTION,
+         maintenance: false}

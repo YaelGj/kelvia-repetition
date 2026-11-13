@@ -1,0 +1,5 @@
+# Prometheus lit /metrics de l'API toutes les 5 secondes (TP 4).
+scrape_configs:
+  - job_name: api
+    scrape_interval: 5s
+    static_configs: [{targets: ["api:8000"]}]
