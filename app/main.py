@@ -10,7 +10,7 @@ FESTIVAL = "Festival de Mon Binôme"
 QUANTITE_MAX = 4
 # Catégories de billets, en mémoire : prix en euros et stock.
 CATEGORIES = {
-    "Pass 1 jour": {"prix": 59, "stock": 5000},
+    "Pass 1 jour": {"prix": 65, "stock": 5000},
     "Pass 3 jours": {"prix": 149, "stock": 2000},
     "Camping": {"prix": 25, "stock": 1000},
 }
